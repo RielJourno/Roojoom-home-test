@@ -11,6 +11,6 @@ The most important part of the code is in the:
 and
 `formApp` -> `static folder` & `templates folder` & `views.py` & `url.py`
 
-the logic of the server calculation is on `views.py
+the logic of the server calculation is on `views.py`
 and the layout inside `formApp` -> `static folder` & `templates folder`
 
