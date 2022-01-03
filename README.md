@@ -14,6 +14,8 @@ and
 the logic of the server calculation is on `views.py`
 and the layout inside `formApp` -> `static folder` & `templates folder`
 
+The `styles.css` file contains very little design, just to make the UI a bit more user-friendly
+
 
 the company:
 
