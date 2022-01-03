@@ -1,0 +1,7 @@
+{% extends "problemsolver/layout.html" %}
+
+{% block body %}
+<h1>{{ platformResponse }}</h1>
+
+<a href="{% url 'problemapp:theForm' %}">new problem</a>
+{% endblock %}
