@@ -19,5 +19,5 @@ the company:
 
 ![This is an image](https://user-images.githubusercontent.com/79834994/147916538-ad7a8f73-2755-4c5f-892e-41a40b56f9cd.png)
 
-visit there product https://www.roojoom.com/
+Check out their product https://www.roojoom.com/
 
