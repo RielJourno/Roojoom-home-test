@@ -16,6 +16,6 @@ and the layout inside `formApp` -> `static folder` & `templates folder`
 
 
 
-![This is an image](![image](https://user-images.githubusercontent.com/79834994/147916538-ad7a8f73-2755-4c5f-892e-41a40b56f9cd.png)
+![This is an image](https://user-images.githubusercontent.com/79834994/147916538-ad7a8f73-2755-4c5f-892e-41a40b56f9cd.png)
 )
 
