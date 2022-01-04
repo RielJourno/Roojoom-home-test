@@ -22,6 +22,20 @@ class newProblemForm(forms.Form):
                                                label='Status Indicator Lights 3')
 
 
+def xor(x, y):
+    if x == "on":
+        x1 = True
+    else:
+        x1 = False
+
+    if y == "off":
+        y1 = True
+    else:
+        y1 = False
+
+    return x1 ^ y1
+
+
 def addProblem(request):
     theResponse = ""
     if request.method == "POST":
@@ -49,7 +63,10 @@ def addProblem(request):
                     theResponse = "turn on the device"
                 elif statusIndicatorLights1 == "blinking" or statusIndicatorLights2 == "blinking" or statusIndicatorLights3 == "blinking":
                     theResponse = "Please wait"
-                elif (statusIndicatorLights1 == "on" and statusIndicatorLights2 == "on") or (statusIndicatorLights2 == "on" and statusIndicatorLights3 == "on") or (statusIndicatorLights1 == "on" and statusIndicatorLights3 == "on"):
+                elif (statusIndicatorLights1 == statusIndicatorLights2 == statusIndicatorLights3 == "on"):
+                    theResponse = "ALL is ok"
+                elif xor(statusIndicatorLights1, xor(statusIndicatorLights2, statusIndicatorLights3)) == 0:
+                    # check if 2 indicators are "on" using my own xor function in line 25
                     theResponse = "ALL is ok"
 
             elif serial.isnumeric():
