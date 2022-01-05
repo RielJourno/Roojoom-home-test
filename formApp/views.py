@@ -63,11 +63,18 @@ def addProblem(request):
                     theResponse = "turn on the device"
                 elif statusIndicatorLights1 == "blinking" or statusIndicatorLights2 == "blinking" or statusIndicatorLights3 == "blinking":
                     theResponse = "Please wait"
-                elif (statusIndicatorLights1 == statusIndicatorLights2 == statusIndicatorLights3 == "on"):
-                    theResponse = "ALL is ok"
-                elif xor(statusIndicatorLights1, xor(statusIndicatorLights2, statusIndicatorLights3)) == 0:
-                    # check if 2 indicators are "on" using my own xor function in line 25
-                    theResponse = "ALL is ok"
+                else:
+                    indicatorNumber = 3
+                    statusIndicatorLights = [0]
+                    for i in range(1, indicatorNumber+1):
+                        if (form.cleaned_data[f"statusIndicatorLights{i}"] == "on"):
+                            statusIndicatorLights.append(1)
+                        elif (form.cleaned_data[f"statusIndicatorLights{i}"] == "off"):
+                            statusIndicatorLights.append(0)
+                    if sum(statusIndicatorLights) >= 2:
+                        theResponse = "ALL is ok"
+                    else:
+                        theResponse = "Undifine result in the home test - It's only 1 indicator on"
 
             elif serial.isnumeric():
                 theResponse = "Bad serial number"
